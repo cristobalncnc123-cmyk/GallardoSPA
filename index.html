@@ -13,12 +13,13 @@
 <style>
 html,body{margin:0;height:100%;background:#173b63}
 iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#fff}
-.fb{position:fixed;bottom:8px;left:0;right:0;text-align:center;font:12px system-ui,Arial;color:#fff;pointer-events:none}
-.fb a{color:#fff;pointer-events:auto}
+.fb{position:fixed;top:8px;left:0;right:0;text-align:center;font:12px system-ui,Arial;color:#fff;display:none}
+.fb a{color:#fff}
 </style></head><body>
+<script>var appOk=false;</script>
 <iframe id="app" allow="web-share; clipboard-write; fullscreen"
+ onload="appOk=true;document.getElementById('fb').style.display='none'"
  src="https://script.google.com/macros/s/AKfycbycVcKI2fSTZf9ComQFiR4rKmVsXEYmERZl6uwPhgy4H3Zlfkq_UFMCUX5Y64sNreTk/exec"></iframe>
-<div class="fb" id="fb" style="display:none">¿No carga? <a href="https://script.google.com/macros/s/AKfycbycVcKI2fSTZf9ComQFiR4rKmVsXEYmERZl6uwPhgy4H3Zlfkq_UFMCUX5Y64sNreTk/exec">Abrir directo</a></div>
-<script>setTimeout(function(){document.getElementById('fb').style.display='block'},8000);
-document.getElementById('app').addEventListener('load',function(){document.getElementById('fb').style.display='none'});</script>
+<div class="fb" id="fb">¿No carga? <a href="https://script.google.com/macros/s/AKfycbycVcKI2fSTZf9ComQFiR4rKmVsXEYmERZl6uwPhgy4H3Zlfkq_UFMCUX5Y64sNreTk/exec">Abrir directo</a></div>
+<script>setTimeout(function(){if(!appOk)document.getElementById('fb').style.display='block'},10000);</script>
 </body></html>
